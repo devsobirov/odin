@@ -17,7 +17,7 @@ class Project extends Authenticatable
 
     protected $guarded = [];
 
-    protected $hidden = ['password'];
+    protected $hidden = ['password', 'remember_token'];
 
     public function terminals(): HasMany
     {

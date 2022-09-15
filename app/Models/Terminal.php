@@ -16,7 +16,7 @@ class Terminal extends Authenticatable
 
     protected $guarded = [];
 
-    protected $hidden = ['password'];
+    protected $hidden = ['password', 'remember_token',];
 
     public function signedIn(): bool
     {

@@ -16,6 +16,7 @@ class CreateTerminalsTable extends Migration
         Schema::create('terminals', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->rememberToken();
 
             $table->unsignedBigInteger('project_id')->nullable();
             $table->string('title')->nullable();

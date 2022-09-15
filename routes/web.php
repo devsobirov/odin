@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\CustomAuthController as AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('login', [AuthController::class, 'loginForm'])->name('login');
+Route::post('login', [AuthController::class, 'login'])->name('submit-login');
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/', \App\Http\Controllers\HomeController::class)->name('home');
+
+Route::middleware('auth:project')->group(function () {
+
 });
