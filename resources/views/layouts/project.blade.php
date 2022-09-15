@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Вход в аккаунт</title>
+    <title>ODIN | Кабинет </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -23,8 +23,10 @@
 </head>
 
 
-<body class="bg-white min-vh-100 border-top border-primary border-3">
-    @yield('content')
+<body>
+    @include('layouts._header-project')
+
+@yield('content')
 
 <!-- JAVASCRIPT
 ============================================-->

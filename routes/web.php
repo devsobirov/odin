@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\CustomAuthController as AuthController;
+use App\Http\Controllers\Project\MainController as Project;
+use App\Http\Controllers\Terminal\MainController as Terminal;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +21,12 @@ Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/', \App\Http\Controllers\HomeController::class)->name('home');
 
-Route::middleware('auth:project')->group(function () {
+Route::middleware('auth:project')->prefix('project')->as('project.')
+    ->group(function () {
+    Route::get('/', [Project::class, 'index'])->name('home');
+});
 
+Route::middleware('auth:terminal')->prefix('terminal')->as('terminal.')
+    ->group(function () {
+    Route::get('/', [Terminal::class, 'index'])->name('home');
 });

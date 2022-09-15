@@ -39,7 +39,10 @@ class CustomAuthController extends Controller
 
     public function logout()
     {
-        //
+        Auth::logout();
+        Auth::guard('project')->logout();
+        Auth::guard('terminal')->logout();
+        return redirect()->route('home');
     }
 
     protected function redirectTo(): string

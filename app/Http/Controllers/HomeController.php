@@ -13,7 +13,15 @@ class HomeController extends Controller
 
     public function __invoke()
     {
-        return view('welcome');
+        if (auth()->guard('project')->check()) {
+            return redirect()->route('project.home');
+        }
+
+        if (auth()->guard('terminal')->check()) {
+            return redirect()->route('terminal.home');
+        }
+
+        abort(404);
     }
 
 }
