@@ -25,7 +25,7 @@
 
 <body>
     @include('layouts._header-project')
-
+    @include('layouts._messages')
 @yield('content')
 
 <!-- JAVASCRIPT
