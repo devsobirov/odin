@@ -25,6 +25,7 @@ class CreateTerminalsTable extends Migration
             $table->string('password');
             $table->string('pincode')->nullable()->unique();
             $table->timestamp('lastauth_at')->nullable();
+            $table->string('type')->nullable();
 
             $table->foreign('project_id')
                 ->references('id')->on('projects')

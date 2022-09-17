@@ -34,4 +34,5 @@ Route::middleware('auth:project')->prefix('project')->as('project.')
 Route::middleware('auth:terminal')->prefix('terminal')->as('terminal.')
     ->group(function () {
     Route::get('/', [Terminal::class, 'index'])->name('home');
+    Route::post('/order', [Terminal::class, 'order'])->name('order');
 });

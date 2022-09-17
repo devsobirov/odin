@@ -23,6 +23,7 @@ class CreateProjectsTable extends Migration
             $table->string('email')->nullable()->unique();
             $table->string('password');
             $table->boolean('order_id_required')->nullable();
+            $table->boolean('automation')->nullable();
         });
     }
 

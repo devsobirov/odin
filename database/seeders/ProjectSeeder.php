@@ -15,6 +15,8 @@ class ProjectSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('projects')->delete();
+
         DB::table('projects')->insert([
             [
                 'name' => 'Project 1',

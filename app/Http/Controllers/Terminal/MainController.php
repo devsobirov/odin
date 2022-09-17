@@ -11,4 +11,9 @@ class MainController extends Controller
     {
         return view('terminal.dashboard');
     }
+
+    public function order(Request $request)
+    {
+        dd($request->all());
+    }
 }
